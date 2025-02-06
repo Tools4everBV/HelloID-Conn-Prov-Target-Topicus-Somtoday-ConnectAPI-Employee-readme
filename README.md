@@ -3,10 +3,11 @@
 > [!IMPORTANT]
 > This repository contains the connector and configuration code only. The implementer is responsible to acquire the connection details such as username, password, certificate, etc. You might even need to sign a contract or agreement with the supplier before implementing this connector. Please contact the client's application manager to coordinate the connector requirements.
 
-|:---------------------------|
-| This is a private repository due to need for own credentials as implementor for this connector (or the usage of our internal credential proxy) |
+> [!WARNING]
+> This is a private repository due to need for own credentials as implementor for this connector (or the usage of our internal credential proxy)
 
-> :warning: Warning - **You need to sign a contract with the supplier before implementing this connector*
+> [!WARNING]
+> **You need to sign a contract with the supplier before implementing this connector*
 
 
 <br />
