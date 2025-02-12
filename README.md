@@ -96,19 +96,19 @@ The field mapping can be imported by using the _fieldMapping.json_ file.
 
 ## Remarks
 ### Supplier credentials
-As implementer, you need your own set of credentials before you can implement this connector. Therefore you need to sign a contract with the supplier.
+As an implementer, you need your own set of credentials before you can implement this connector. Therefore you need to sign a contract with the supplier.
 
 ### Organizations (_setting.currentSchoolName)
-A School (also knows as an 'organization' within Somtoday) might have multiple departments (or vestigingen). Accounts are correlated based on the value of the '_setting.currentSchoolName' in the fieldMapping.
+A School (also known as an 'organization' within Somtoday) might have multiple departments (or vestigingen). Accounts are correlated based on the '_setting.currentSchoolName' value in the fieldMapping.
 
-### Create.ps1 only correlate
-The create.ps1 does not create accounts but merely correlates a HelloID person with an employee in Somtoday.
+### Create.ps1 correlate
+The create.ps1 does create employees but only accounts for the employees; So managing the employee is not in the scope of this connector. When an employee does not exist the connector throws an error.
 
 ### HR target Source
 Since this connector is often used with the Somtoday Source connector, the current version uses the employee's UUID -with a custom property- to correlate the account in Somtoday. However, the connector can be used with other source systems. To achieve this, you should add a field in the field mapping and use it as the correlation key or value. This should be an existing property in Somtoday. For example, `externnummer` or `medewerkernummer`.
 
 ### Employee vs Account
-The connector manages the accounts of employees in Somtoday. Therefore, it does not create or update employee records but only creates accounts for existing employees. The Update action also creates an account if one does not already exist.
+The connector manages the accounts of employees in Somtoday. Therefore, it does not create or update employee records but only creates accounts for existing employees.
 
 ### Change School
 Currently, it is not supported in the connector for a Somtoday employee to switch between schools. If this is a common situation, it can be implemented, but it requires some modifications to the code. For example, the AccountReference needs to be updated when a school change occurs. If this happens only occasionally, you could remove the account from HelloID and re-run the creation script.
